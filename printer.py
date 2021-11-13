@@ -43,8 +43,6 @@ if parameter_path == True:
 
 
 
-
-
     # COLOCAR AS PÁGINAS NA ORDEM CORRETA PARA A IMPRESSÃO
 
     def impressao():
