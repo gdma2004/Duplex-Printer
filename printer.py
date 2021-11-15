@@ -1,3 +1,25 @@
+######################################################################
+#  _____              _             _____      _       _             #
+# |  __ \            | |           |  __ \    (_)     | |            #
+# | |  | |_   _ _ __ | | _____  __ | |__) | __ _ _ __ | |_ ___ _ __  #
+# | |  | | | | | '_ \| |/ _ \ \/ / |  ___/ '__| | '_ \| __/ _ \ '__| #
+# | |__| | |_| | |_) | |  __/>  <  | |   | |  | | | | | ||  __/ |    #
+# |_____/ \__,_| .__/|_|\___/_/\_\ |_|   |_|  |_|_| |_|\__\___|_|    #
+#              | |                                                   #
+#              |_|                                                   #
+######################################################################
+
+
+# Feito por Gabriel Dantas
+# https://gihub.com/gdma2004
+
+# Script para imprimir frente e verso em qualquer impressora, mesmo que ela não tenha essa função
+# O código foi feito com foco em ambientes GNU/Linux e Unix
+# Você deve ter os drivers da sua impressora instalados para que o programa funcione
+
+
+
+
 # BIBLIOTECAS
 
 import PyPDF2, os, time, shutil
@@ -11,7 +33,10 @@ from os import path
 
 os.system('sudo clear')
 print('######## DUPLEX PYTHON PRINTER #########\n')
-parameter_dir = bool(path.exists('/home/gdma/Arquivos_De_Impressão'))
+
+home = os.getenv('HOME')
+
+parameter_dir = bool(path.exists('{}/Arquivos_De_Impressão'.format(home)))
 
 if parameter_dir == True:
     pass
@@ -32,7 +57,7 @@ else:
 # PATH
 
 local = str(input('\n\nDigite o nome do seu arquivo\n\n-> '))
-local_arquivo = '/home/gdma/Arquivos_De_Impressão/'
+local_arquivo = ('{}/Arquivos_De_Impressão/'.format(home))
 local_adaptado = ('{}{}'.format(local_arquivo,local))
 parameter_path = bool(path.exists(local_adaptado))
 
@@ -85,7 +110,9 @@ if parameter_path == True:
         else:
             exit()
 
-    
+
+    # Adicionar 1 folha em branco no final do arquivo caso o número de páginas seja ímpar
+
     file = open(local_adaptado, 'rb')
     pdf_editar = PyPDF2.PdfFileReader(file)
     outPdf=PyPDF2.PdfFileWriter()
@@ -106,7 +133,7 @@ if parameter_path == True:
     
     file = open(local_adaptado, 'rb')
     pdf_editar = PyPDF2.PdfFileReader(file)
-    outPdf=PyPDF2.PdfFileWriter()
+    outPdf = PyPDF2.PdfFileWriter()
     numero_de_paginas = int(pdf_editar.numPages)
 
 
