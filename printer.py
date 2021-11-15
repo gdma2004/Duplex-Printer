@@ -17,7 +17,7 @@ if parameter_dir == True:
     pass
 else:
     print('Foi criada uma pasta chamada "Arquivos_De_Impressão" na sua home. Mova seus arquivos de impressão para ela.\n')
-    os.makedirs('/home/gdma/Arquivos_De_Impressão')
+    os.system('mkdir ~/Arquivos_De_Impressão')
 
 tree = str(input('Exibir arquivos da pasta de impressão? (y/n)\n\n-> '))
 
