@@ -11,7 +11,7 @@
 
 
 # Feito por Gabriel Dantas
-# https://gihub.com/gdma2004
+# https://github.com/gdma2004
 
 # Script para imprimir frente e verso em qualquer impressora, mesmo que ela não tenha essa função
 # O código foi feito com foco em ambientes GNU/Linux e Unix
