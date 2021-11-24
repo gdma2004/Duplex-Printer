@@ -30,9 +30,10 @@ from os import path
 
 
 # PASTA PRINTER
+tamanho = os.get_terminal_size().columns
 
 os.system('sudo clear')
-print('######## DUPLEX PYTHON PRINTER #########\n')
+print('  DUPLEX PYTHON PRINTER  '.center(tamanho, '#'))
 
 home = os.getenv('HOME')
 
@@ -44,11 +45,10 @@ else:
     print('Foi criada uma pasta chamada "Arquivos_De_Impressão" na sua home. Mova seus arquivos de impressão para ela.\n')
     os.system('mkdir ~/Arquivos_De_Impressão')
 
-tree = str(input('Exibir arquivos da pasta de impressão? (y/n)\n\n-> '))
+tree = str(input('\nExibir arquivos da pasta de impressão? (y/n)\n\n-> '))
 
 if tree == 'y':
-    print(' ')
-    os.system('tree ~/Arquivos_De_Impressão\n')
+    os.system('clear && tree ~/Arquivos_De_Impressão\n')
 else:
     pass
 
