@@ -2,9 +2,9 @@
 Script em python para imprimir frente em verso em qualquer impressora, mesmo não havendo essa funcionalidade.
 
 ## Requerimentos:
-1) GNU/Linux
-2) Unix
-3) Impressora com drivers instalados
+1) GNU/Linux;
+2) Unix;
+3) Impressora com drivers instalados (hplip)
 
 ## Como usar?
 1) O programa cria uma pasta para as impressões, você deve mover seus arquivos para ela;
